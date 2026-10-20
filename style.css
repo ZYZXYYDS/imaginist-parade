@@ -1,0 +1,315 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", "PingFang SC", "KaiTi", sans-serif;
+}
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    scroll-snap-type: y proximity;
+}
+section[id],
+.world > div {
+    scroll-margin-top: 80px;
+}
+/* 开头 */
+header {
+    background-color:rgba(5, 41, 58, 0.8);
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    left: 0;
+}
+h1 {
+    color: white;
+    position: absolute;
+    left: 40px;
+    top: 0;
+    line-height: 80px;
+    width: 180px;
+    height: 80px;
+    background-image: url(微信图片_20261016125342_132_35.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-indent: -9999px;
+}
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+header a {
+    color:white;
+    text-decoration: none;
+}
+header a:hover {
+    text-decoration: underline;
+}
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    list-style: none;
+    line-height: 80px;
+}
+/* 开头 */
+.first {
+    background-color: rgb(5, 41, 58);
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 80px 10% 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(微信图片_2026-10-16_124152_409.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+.first::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.first h2,
+.first p {
+    position: relative;
+    z-index: 1;
+}
+.first h2 {
+    color: aliceblue;
+    font-size: clamp(28px, 4vw, 50px);
+    line-height: 1.6;
+    text-align: center;
+}
+.first p {
+    color: aliceblue;
+    font-size: clamp(16px, 2vw, 25px);
+    margin-top: 6px;
+    text-align: center;
+}
+/* 简介 */
+.introduction {
+    background-color: antiquewhite;
+    color: white;
+    height: 100vh;
+    background-image: url(微信图片_2026-10-16_124223_680.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: inherit;
+    min-height: 100vh;
+    padding: 80px 10% 40px;
+}
+.introduction::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.introduction h2,
+.introduction p {
+    position: relative;
+    z-index: 1;
+}
+.introduction h2 {
+    font-size: clamp(40px, 6vw, 90px);
+    color: white;
+    text-shadow: 
+    -1px -1px #000,
+    1px -1px #000,
+    -1px 1px #000,
+    1px 1px #000;
+    text-align: center;
+    line-height: 1.8em;
+    text-indent: 1em;
+}
+.introduction p {
+    color:aliceblue;
+    font-size: clamp(16px, 2.2vw, 30px);
+    margin: 25px 0;
+    text-shadow: 
+    -1px -1px #000,
+    1px -1px #000,
+    -1px 1px #000,
+    1px 1px #000;
+    text-align: justify;
+    letter-spacing: 0.075em;
+    text-indent: 2em;
+    line-height: 1.8em;
+}
+/* 世界观 */
+.world {
+    background-color: rgb(15, 4, 62);
+    color: white;
+}
+.world > div {
+    min-height: 100vh;
+    padding: 100px 35% 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+.world img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.world blockquote {
+    font-size: 35px;
+    margin: 0;
+} 
+.world h2 {
+    color: white;
+    font-size: clamp(40px, 6vw, 90px);
+    text-shadow: 
+    -1px -1px #000,
+    1px 1px #000,
+    -1px 1px #000,
+    1px 1px #000;
+    text-align: center;
+    line-height: 1.8em;
+
+}
+.world p {
+    line-height: 1.6em;
+    max-width: 400px;
+    font-size: 25px;
+    line-height: 1.8em;
+    text-align: justify;
+    text-indent: 2em;
+}
+.People {
+    background-color: #6cf;
+    color: whitesmoke;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+.People > div {
+    min-height: 100vh;               
+    padding: 100px 65px 60px;          
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    scroll-snap-align: start;      
+    scroll-snap-stop: always;
+}
+.People img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.People blockquote {
+    color: #000;
+    font-size: 50px;
+    margin: 0;
+}
+.People h2 {
+    color: #000;
+    font-size: clamp(40px, 6vw, 90px);
+    text-align: center;
+    line-height: 1.8em;
+}
+.People p {
+    max-width: 540px;
+    font-size: 25px;
+    line-height: 1.8em;
+    text-align: justify;
+    text-shadow: 
+    -1px -1px #000,
+    1px 1px #000,
+    -1px 1px #000,
+    1px 1px #000;
+}
+.People h3 {
+    color: #010b36;
+    font-size: clamp(20px, 4vw, 50px);
+    line-height: 1.6;
+    text-align: center;
+}
+/* 斜体 */
+blockquote {
+    font-style: italic;
+    font-size: 35px;
+    margin: 12px 0;
+}
+/* 结尾 */
+footer {
+    background-color: #000;
+    color: #b7b7b7;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    padding: 0 16px;
+} 
+/* 响应式设计 */
+@media screen and (max-width: 1024px) {
+    header ul {
+        display: none;
+    }
+    header h1 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .first h2 {
+        font-size: 30px;
+    }
+    .first p {
+        font-size: 14px;
+    }
+    .introduction h2 {
+        font-size: 42px;
+    }
+    .introduction p {
+        font-size: 20px;
+    }
+    .world > div {
+        padding: 90px 6% 50px;
+    }
+    .world p {
+        font-size: 25px;
+    }
+    .People > div {
+        padding: 90px 6% 50px;
+    }
+    .People p {
+        font-size: 25px;
+    }
+}
