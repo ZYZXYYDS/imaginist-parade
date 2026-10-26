@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Helvetica", "PingFang SC", "KaiTi", sans-serif;
+    font-family: "Helvetica", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 html {
     overflow: hidden;
@@ -120,7 +120,6 @@ header ul {
     align-items: center;
     justify-content: center;
     position: relative;
-    transform-style: inherit;
     min-height: 100vh;
     padding: 80px 10% 40px;
 }
@@ -165,23 +164,52 @@ header ul {
 /* 世界观 */
 .world {
     background-color: rgb(15, 4, 62);
+    background-image: url('海报.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     color: white;
-}
-.world > div {
-    min-height: 100vh;
-    padding: 100px 35% 60px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.world > div {
+    min-height: 75vh;
+    max-width: 1200px;
+    margin: 15vh auto;
+    position: relative;
+    padding: 45px 60px;
+    border-radius: 18px;
+    display: grid;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    text-align: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    text-align: left;
+    scroll-snap-align: center;
+    background-color: rgb(15, 4, 62);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center center;
+    will-change: transform;
+    overflow: hidden;
+    box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.35);
+}
+.world > div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(8, 4, 30, 0.62);
+    pointer-events: none;
+    z-index: 0;
 }
 .world img {
     width: 100%;
-    max-width: 550px;
+    max-width: 400px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -191,7 +219,7 @@ header ul {
 } 
 .world h2 {
     color: white;
-    font-size: clamp(40px, 6vw, 90px);
+    font-size: clamp(40px, 19vw, 90px);
     text-shadow: 
     -1px -1px #000,
     1px 1px #000,
@@ -203,29 +231,61 @@ header ul {
 }
 .world p {
     line-height: 1.6em;
-    max-width: 400px;
-    font-size: 25px;
+    max-width: 500px;
+    font-size: 35px;
     line-height: 1.8em;
     text-align: justify;
     text-indent: 2em;
 }
+.world > div > * {
+    position: relative;
+    z-index: 1;
+}
+/* 人物 */
 .People {
-    background-color: #6cf;
-    color: whitesmoke;
-    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+    background-image: url('微信图片_2026-10-16_124209_785.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
+    color: whitesmoke;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 .People > div {
-    min-height: 100vh;               
-    padding: 100px 65px 60px;          
-    display: flex;
+    min-height: 85vh; 
+    width: 88vw;
+    max-width: 1200px;              
+    padding: 45px 60px;    
+    margin: 15vh auto;      
+    display: grid;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-    scroll-snap-align: start;      
-    scroll-snap-stop: always;
+    text-align: left;
+    scroll-snap-align: center;      
+    background-color: #6cf;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: center center;
+    will-change: transform;
+    box-shadow: 0 -12px 36px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 18px;
+}
+.People > div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 10, 30, 0.55);
+    pointer-events: none;
+    z-index: 0;
 }
 .People img {
     width: 100%;
@@ -234,15 +294,20 @@ header ul {
     object-fit: cover;
 }
 .People blockquote {
-    color: #000;
+    color: #ebe9e9;
     font-size: 50px;
     margin: 0;
 }
 .People h2 {
-    color: #000;
-    font-size: clamp(40px, 6vw, 90px);
+    color: #e6e6e6;
+    font-size: clamp(55px, 6vw, 90px);
     text-align: center;
     line-height: 1.8em;
+    text-shadow: 
+    -1px -1px #000,
+    1px 1px #000,
+    -1px 1px #000,
+    1px 1px #000;
 }
 .People p {
     max-width: 540px;
@@ -256,10 +321,198 @@ header ul {
     1px 1px #000;
 }
 .People h3 {
-    color: #010b36;
+    color: #e3e3e3;
     font-size: clamp(20px, 4vw, 50px);
     line-height: 1.6;
     text-align: center;
+}
+.People > div > * {
+    position: relative;
+    z-index: 1;
+}
+.world > .Bay { background-image: url('微信图片_20261016213318_137_35.jpg');}
+.world > .Core {background-image: url('塔.jpg');}
+.world > .Dreambuilders {background-image: url('微信图片_2026-10-16_124220_345.jpg');}
+.world > .Everfog {background-image: url('微信图片_20261016213318_137_35.jpg');}
+.world > .Forces {background-image: url('微信图片_20261016213318_137_35.jpg');}
+.world > .Laws { background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.world > .Weapon { background-image: url('俊达.jpg'); }
+.People > .CLY { background-image: url('克莱.jpg'); }
+.People > .JD { background-image: url('俊达3.jpg'); }
+.People > .MYG { background-image: url('暮瑶光3.jpg'); }
+.People > .DHC { background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.People > .XQ { background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.People > .XIAN { background-image: url('席安.jpg'); }
+.People > .YYH {background-image: url('云与海.jpg'); }
+.People > .LYLT {background-image: url('73174.png'); }
+.People > .XY {background-image: url('杂鱼.jpg'); }
+.People > .LSM {background-image: url('李水木3.jpg'); }
+.People > .ZHY {background-image: url('慿4.jpg'); }
+.People > .DL {background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.People > .AN {background-image: url('阿尔伯特2.jpg'); }
+.People > .IT {background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.People > .QIANYIN {background-image: url('微信图片_20261016213318_137_35.jpg'); }
+.People > .SYR { background-image: url('微信图片_20261016213318_137_35.jpg');}
+.People > .DONG {background-image: url('微信图片_20261016213318_137_35.jpg');}
+.People > .QY { background-image: url('青云4.jpg'); }
+.world > div > h2,
+.People > div > h2,
+.People > div > h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+}
+.world > div > h2 {
+    color: white;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.6;
+    text-shadow: 
+        -1px -1px #000,
+        1px 1px #000,
+        -1px 1px #000,
+        1px 1px #000;;
+}
+.People > div > h2 {
+    color: #fff;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.6;
+    text-shadow:
+        -1px -1px #000,
+        1px 1px #000,
+        -1px 1px #000,
+        1px 1px #000;
+}
+.People > div > h3 {
+    color: #fff;
+    font-size: clamp(22px, 3.2vw, 40px);
+    line-height: 1.5;
+    text-shadow:
+        -1px -1px #000,
+        1px -1px #000,
+        -1px 1px #000,
+        1px 1px #000;
+    margin-top: 8px;
+}
+.world > div > p,
+.People > div > p {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    font-size: clamp(15px, 1.5vw, 19px);
+    line-height: 1.9em;
+    text-align: justify;
+    text-indent: 2em;
+    color: #fff;
+    text-shadow:
+        -1px -1px #000,
+        1px -1px #000,
+        -1px 1px #000,
+        1px 1px #000;
+}
+.People > .QY > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    text-indent: 0;
+    max-width: 720px;
+    justify-self: center;
+}
+/* 魔物 */
+.MONSTER {
+    display: flex;
+    flex-direction: column; /* 改为纵向排列，一页一卡 */
+    align-items: center;
+    background: #090349;
+    min-height: 100vh;
+    padding-top: 100px; /* 顶部避开导航栏 */
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+.MONSTER .card {
+    width: 88vw;
+    max-width: 1000px; /* 限制最大宽度，和 People 接近 */
+    min-height: 60vh;
+    background: #fdfdfd;
+    border-radius: 20px;
+    padding: 0 50px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 12vh auto; /* 上下留白，配合 scroll-snap */
+    scroll-snap-align: center; /* 停在屏幕正中间 */
+    transition: box-shadow 0.4s ease;
+}
+.MONSTER .card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+.MONSTER .card > div:first-child {
+    width: 80%;
+    max-width: 700px;
+    height: 550px; /* 大图尺寸 */
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    margin-top: -60px; /* 向上浮出卡片 */
+    position: relative;
+    z-index: 2;
+    transition: transform 0.4s ease;
+}
+
+/* 图片本体 */
+.MONSTER .card > div:first-child img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* 第二个 div（文字）统一隐藏 */
+.MONSTER .card > div:last-child {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 90%;
+    padding: 0 !important; 
+    margin: 0 !important;
+    transition: all 0.5s ease;
+}
+
+/* ★ 激活状态（点击后） */
+.MONSTER .card.active > div:first-child {
+    transform: translateY(-10px); /* 图片再往上浮一点 */
+}
+
+.MONSTER .card.active > div:last-child {
+    max-height: 800px; /* 足够大以容纳长文字 */
+    opacity: 1;
+    padding: 30px 20px 40px !important;
+    margin-top: 20px !important;
+}
+
+/* 文字排版 */
+.MONSTER .card > div:last-child blockquote {
+    font-size: 32px;
+    font-weight: bold;
+    color: #090349;
+    margin: 0 0 15px 0;
+    border-bottom: 3px solid #090349;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.MONSTER .card > div:last-child p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #333;
+    text-align: justify;
+    margin: 0;
 }
 /* 斜体 */
 blockquote {
@@ -279,6 +532,62 @@ footer {
     text-align: center;
     padding: 0 16px;
 } 
+/* 汉堡按钮 */
+.menu {
+    display: none;
+    background-color: transparent;
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    border: none;
+    cursor: pointer;
+}
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* 默认隐藏在屏幕左侧外 */
+    width: 260px;
+    height: 100vh;
+    background-color: rgba(5, 41, 58, 0.98); /* 和 header 颜色统一 */
+    z-index: 90; /* 低于 header 的 100，保证顶部汉堡按钮可点 */
+    transition: left 0.3s ease;
+    padding-top: 80px; /* 顶部留白，正好避开 header */
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    visibility: hidden; /* 防止在屏幕外时被 Tab 键选中 */
+}
+.mobile-menu.open {
+    left: 0;
+    visibility: visible;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.2s;
+}
+
+.mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 /* 响应式设计 */
 @media screen and (max-width: 1024px) {
     header ul {
@@ -311,5 +620,27 @@ footer {
     }
     .People p {
         font-size: 25px;
+    }
+    .MONSTER .card {
+        width: 90vw;
+        margin-top: 10vh;
+        padding: 0 20px;
+    }
+    .MONSTER .card > div:first-child {
+        height: 400px;
+        width: 90%;
+        margin-top: -40px;
+    }
+    .MONSTER .card.active > div:last-child {
+        padding: 20px 10px 30px !important;
+    }
+    .MONSTER .card > div:last-child blockquote {
+        font-size: 24px;
+    }
+    .MONSTER .card > div:last-child p {
+        font-size: 15px;
+    }
+    .menu {
+        display: block;
     }
 }
